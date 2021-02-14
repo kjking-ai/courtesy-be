@@ -1,7 +1,7 @@
 package com.courtesy.courtesybe.controller;
 
-import com.courtesy.courtesybe.model.Employee;
-import com.courtesy.courtesybe.repository.EmployeeRepository;
+import com.courtesy.courtesybe.model.Customer;
+import com.courtesy.courtesybe.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,13 +11,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "api/")
-public class EmployeeController {
+public class CustomerController {
 
     @Autowired
-    private EmployeeRepository employeeRepository;
+    private CustomerRepository customerRepository;
 
-    @GetMapping("employees")
-    public List<Employee> getUsers() {
-        return this.employeeRepository.findAll();
+    @GetMapping("customer")
+    public List<Customer> getCustomers() {
+        return this.customerRepository.findAll();
     }
 }

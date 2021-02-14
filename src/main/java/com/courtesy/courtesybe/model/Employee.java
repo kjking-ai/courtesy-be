@@ -9,18 +9,22 @@ import javax.persistence.Id;
 
 @Entity
 //@Table(name = "Employees")
+
 public class Employee {
 
+    private String title;
     private String name;
     private int salary;
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    public Employee(String name, int salary){
+    public Employee(String name, int salary,String title){
         this.name = name;
         this.salary = salary;
+        this.title = title;
 
     }
 
@@ -49,5 +53,13 @@ public class Employee {
 
     public Long getId() {
         return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }
